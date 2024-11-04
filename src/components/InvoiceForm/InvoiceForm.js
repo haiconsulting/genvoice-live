@@ -72,7 +72,7 @@ const InvoiceForm = ({ invoiceData, setInvoiceData }) => {
         terms: prev.terms || ''
       }));
     }
-  }, [uploadConfig.type, setInvoiceData]);
+  }, [uploadConfig.type]);
 
   const formAnimation = {
     hidden: { 

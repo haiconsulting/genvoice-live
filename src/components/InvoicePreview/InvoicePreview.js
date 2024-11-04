@@ -16,10 +16,12 @@ const InvoicePreview = ({ invoiceData, onTemplateChange }) => {
   const template = templateManager.getTemplate(invoiceData.selectedTemplate || 'default');
   const initialContent = template.render(invoiceData, calculateTotal);
   
-  const isSOW = (invoiceData.selectedTemplate && 
-                (invoiceData.selectedTemplate === 'sow' || 
-                 invoiceData.selectedTemplate.startsWith('custom-') && 
+  const isSOW = ((invoiceData.selectedTemplate === 'sow') || 
+                (invoiceData.selectedTemplate.startsWith('custom-') && 
                  invoiceData.selectedTemplate.includes('-sow-'))) || false;
+
+  const isEditable = (invoiceData.selectedTemplate && content) || defaultContent;
+  const isPreview = (invoiceData.selectedTemplate && content) || defaultContent;
 
   const handleEditorChange = (content) => {
     if (onTemplateChange) {

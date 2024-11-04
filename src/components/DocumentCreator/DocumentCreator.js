@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import InvoiceForm from '../InvoiceForm/InvoiceForm';
 import InvoicePreview from '../InvoicePreview/InvoicePreview';
 import BrandingManager from '../BrandingManager/BrandingManager';
-import { templateManager } from '../../templates/templateManager';
 import './DocumentCreator.css';
 
 const DocumentCreator = () => {
