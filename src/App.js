@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Navigation from './components/Navigation/Navigation';
 import DocumentCreator from './components/DocumentCreator/DocumentCreator';
@@ -18,7 +18,7 @@ function App() {
   }, [isDarkMode]);
 
   return (
-    <Router basename="/genvoice-live">
+    <Router>
       <motion.div 
         className={`App ${isDarkMode ? 'dark-mode' : 'light-mode'}`}
         initial={{ opacity: 0 }}
@@ -30,8 +30,8 @@ function App() {
           toggleDarkMode={() => setIsDarkMode(!isDarkMode)} 
         />
         <Routes>
-          <Route path="/genvoice-live" element={<DocumentCreator />} />
-          <Route path="/genvoice-live/template-generator" element={<TemplateGenerator />} />
+          <Route path="/" element={<DocumentCreator />} />
+          <Route path="/template-generator" element={<TemplateGenerator />} />
         </Routes>
       </motion.div>
     </Router>
