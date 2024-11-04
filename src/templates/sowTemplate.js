@@ -1,61 +1,81 @@
 export const sowTemplate = {
-  name: 'Statement of Work Template',
-  render: (invoiceData, calculateTotal) => `
-    <div style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; color: #000000;">
-      <div style="display: flex; justify-content: space-between; margin-bottom: 30px;">
-        <h2 style="color: #000000; margin: 0;">Statement of Work #${invoiceData.invoiceNumber}</h2>
-        <div>
-          <p style="margin: 5px 0; color: #000000;">Start Date: ${invoiceData.date}</p>
-          <p style="margin: 5px 0; color: #000000;">End Date: ${invoiceData.dueDate}</p>
+  render: (data, calculateTotal) => {
+    const total = calculateTotal();
+    const formattedTotal = total.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+
+    return `
+    <div style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif;">
+      ${data.logo ? `
+        <div style="text-align: center; margin-bottom: 30px;">
+          <img src="${data.logo}" alt="Company Logo" style="max-width: 200px; height: auto;">
         </div>
-      </div>
+      ` : ''}
+
+      <h1 style="text-align: center; color: #333;">Statement of Work</h1>
       
-      <div style="margin-bottom: 30px;">
-        <h3 style="color: #000000; margin-bottom: 10px;">Client Information:</h3>
-        <p style="margin: 5px 0; color: #000000;">Client: ${invoiceData.clientName}</p>
-        <p style="margin: 5px 0; color: #000000;">Email: ${invoiceData.clientEmail}</p>
+      <div style="margin: 20px 0;">
+        <p><strong>SOW Number:</strong> ${data.invoiceNumber}</p>
+        <p><strong>Start Date:</strong> ${data.date}</p>
+        <p><strong>End Date:</strong> ${data.dueDate}</p>
+        <p><strong>Client:</strong> ${data.clientName}</p>
+        <p><strong>Client Email:</strong> ${data.clientEmail}</p>
       </div>
 
-      <div style="margin-bottom: 30px;">
-        <h3 style="color: #000000; margin-bottom: 10px;">Project Scope:</h3>
-        <p style="margin: 5px 0; color: #000000;">${invoiceData.projectScope || 'Not specified'}</p>
+      <div style="margin: 30px 0;">
+        <h2>Project Scope</h2>
+        <p>${data.projectScope || 'Project scope to be defined.'}</p>
       </div>
 
-      <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px; color: #000000;">
-        <thead>
-          <tr style="background-color: #f5f5f5;">
-            <th style="padding: 12px; text-align: left; border-bottom: 2px solid #000000; color: #000000;">Task Description</th>
-            <th style="padding: 12px; text-align: left; border-bottom: 2px solid #000000; color: #000000;">Hours</th>
-            <th style="padding: 12px; text-align: left; border-bottom: 2px solid #000000; color: #000000;">Rate/Hour</th>
-            <th style="padding: 12px; text-align: left; border-bottom: 2px solid #000000; color: #000000;">Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${invoiceData.items.map(item => `
-            <tr>
-              <td style="padding: 12px; border-bottom: 1px solid #ddd; color: #000000;">${item.description}</td>
-              <td style="padding: 12px; border-bottom: 1px solid #ddd; color: #000000;">${item.quantity}</td>
-              <td style="padding: 12px; border-bottom: 1px solid #ddd; color: #000000;">$${item.price.toFixed(2)}</td>
-              <td style="padding: 12px; border-bottom: 1px solid #ddd; color: #000000;">$${(item.quantity * item.price).toFixed(2)}</td>
+      <div style="margin: 30px 0;">
+        <h2>Deliverables and Pricing</h2>
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+          <thead>
+            <tr style="background-color: #f5f5f5;">
+              <th style="padding: 12px; border-bottom: 2px solid #ddd; text-align: left;">Description</th>
+              <th style="padding: 12px; border-bottom: 2px solid #ddd; text-align: right;">Hours</th>
+              <th style="padding: 12px; border-bottom: 2px solid #ddd; text-align: right;">Rate</th>
+              <th style="padding: 12px; border-bottom: 2px solid #ddd; text-align: right;">Total</th>
             </tr>
-          `).join('')}
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="3" style="padding: 12px; text-align: right; font-weight: bold; color: #000000;">Total Hours: ${invoiceData.items.reduce((sum, item) => sum + Number(item.quantity), 0)}</td>
-            <td style="padding: 12px; font-weight: bold; color: #000000;"></td>
-          </tr>
-          <tr>
-            <td colspan="3" style="padding: 12px; text-align: right; font-weight: bold; color: #000000;">Total Amount:</td>
-            <td style="padding: 12px; font-weight: bold; color: #000000;">$${calculateTotal().toFixed(2)}</td>
-          </tr>
-        </tfoot>
-      </table>
-
-      <div style="margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">
-        <h3 style="color: #000000; margin-bottom: 10px;">Terms and Conditions:</h3>
-        <p style="margin: 5px 0; color: #000000;">${invoiceData.terms || 'Standard terms and conditions apply.'}</p>
+          </thead>
+          <tbody>
+            ${data.items.map(item => `
+              <tr>
+                <td style="padding: 12px; border-bottom: 1px solid #ddd;">${item.description}</td>
+                <td style="padding: 12px; border-bottom: 1px solid #ddd; text-align: right;">${item.quantity}</td>
+                <td style="padding: 12px; border-bottom: 1px solid #ddd; text-align: right;">$${item.price}</td>
+                <td style="padding: 12px; border-bottom: 1px solid #ddd; text-align: right;">$${(item.quantity * item.price).toFixed(2)}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3" style="padding: 12px; text-align: right;"><strong>Total:</strong></td>
+              <td style="padding: 12px; text-align: right;"><strong>${formattedTotal}</strong></td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
-    </div>
-  `
+
+      <div style="margin: 30px 0;">
+        <h2>Terms and Conditions</h2>
+        <p>${data.terms || 'Terms and conditions to be defined.'}</p>
+      </div>
+
+      ${data.signature ? `
+        <div style="margin-top: 40px;">
+          <h2>Authorization</h2>
+          <div style="margin-top: 20px;">
+            <div style="display: inline-block; margin-right: 50px;">
+              <img src="${data.signature}" alt="Signature" style="max-width: 200px; height: auto;">
+              <hr style="width: 200px; margin: 10px 0;">
+              <p>Authorized Signature</p>
+            </div>
+            <div style="display: inline-block;">
+              <p style="margin-bottom: 30px;">Date: ${new Date().toLocaleDateString()}</p>
+            </div>
+          </div>
+        </div>
+      ` : ''}
+    </div>`;
+  }
 }; 
