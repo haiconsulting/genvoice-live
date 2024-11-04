@@ -23,12 +23,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd genvoice-app
           npm install
 
       - name: Build application
         run: |
-          cd genvoice-app
           npm run build
         env:
           REACT_APP_OPENAI_API_KEY: ${{ secrets.REACT_APP_OPENAI_API_KEY }}
@@ -38,5 +36,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: genvoice-app/build
+          folder: build
           branch: gh-pages 
