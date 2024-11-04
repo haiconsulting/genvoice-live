@@ -30,8 +30,8 @@ function App() {
           toggleDarkMode={() => setIsDarkMode(!isDarkMode)} 
         />
         <Routes>
-          <Route path="/" element={<DocumentCreator />} />
-          <Route path="/template-generator" element={<TemplateGenerator />} />
+          <Route path="/genvoice-live" element={<DocumentCreator />} />
+          <Route path="/genvoice-live/template-generator" element={<TemplateGenerator />} />
         </Routes>
       </motion.div>
     </Router>
