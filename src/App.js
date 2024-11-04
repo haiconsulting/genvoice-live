@@ -18,7 +18,7 @@ function App() {
   }, [isDarkMode]);
 
   return (
-    <Router>
+    <Router basename="/genvoice-live">
       <motion.div 
         className={`App ${isDarkMode ? 'dark-mode' : 'light-mode'}`}
         initial={{ opacity: 0 }}
