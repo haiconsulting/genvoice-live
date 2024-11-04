@@ -4,7 +4,6 @@ import { openaiService } from '../../services/openaiService';
 import { templateManager } from '../../templates/templateManager';
 import { defaultTemplate } from '../../templates/defaultTemplate';
 import { sowTemplate } from '../../templates/sowTemplate';
-import InvoicePreview from '../InvoicePreview/InvoicePreview';
 import LoadingIndicator from '../LoadingIndicator/LoadingIndicator';
 import CostDisplay from '../CostDisplay/CostDisplay';
 import './TemplateGenerator.css';
@@ -146,23 +145,6 @@ ${generatedTemplate}
     a.click();
     window.URL.revokeObjectURL(url);
     document.body.removeChild(a);
-  };
-
-  const handleTemplateChange = async (newContent) => {
-    try {
-      // Create a new template from the edited content
-      const templateName = `edited-${templateConfig.baseTemplate}-${Date.now()}`;
-      await templateManager.addTemplate(templateName, new Blob([newContent], { type: 'text/html' }), {
-        type: templateConfig.baseTemplate,
-        content: newContent
-      });
-      
-      // Update the generated template state
-      setGeneratedTemplate(newContent);
-    } catch (err) {
-      console.error('Error saving template changes:', err);
-      setError('Failed to save template changes. Please try again.');
-    }
   };
 
   return (
