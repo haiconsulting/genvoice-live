@@ -20,9 +20,6 @@ const InvoicePreview = ({ invoiceData, onTemplateChange }) => {
                 (invoiceData.selectedTemplate.startsWith('custom-') && 
                  invoiceData.selectedTemplate.includes('-sow-'))) || false;
 
-  const isEditable = (invoiceData.selectedTemplate && content) || defaultContent;
-  const isPreview = (invoiceData.selectedTemplate && content) || defaultContent;
-
   const handleEditorChange = (content) => {
     if (onTemplateChange) {
       onTemplateChange(content);
