@@ -1,0 +1,165 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  transition: all 0.3s ease;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App.light-mode {
+  background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+  color: #333;
+}
+
+.App-header {
+  background-color: rgba(24, 24, 28, 0.95);
+  padding: 20px;
+  color: #e0e0e0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.light-mode .App-header {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #333;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle {
+  position: absolute;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.light-mode .theme-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.App-main {
+  width: 90%;
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.App-main form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Desktop Layout */
+@media (min-width: 1024px) {
+  .App-main form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .submit-button {
+    grid-column: span 2;
+  }
+}
+
+/* Tablet Layout */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .App-main {
+    width: 85%;
+  }
+
+  .App-main form {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile Layout */
+@media (max-width: 767px) {
+  .App {
+    padding: 0.5rem;
+  }
+
+  .App-main {
+    width: 95%;
+    padding: 0 0.5rem;
+  }
+
+  .App-main form {
+    gap: 1.5rem;
+  }
+
+  .App-header {
+    padding: 15px;
+  }
+
+  .App-header h1 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Submit Button Styles */
+.submit-button {
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem auto 0;
+  padding: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Theme-specific styles */
+.light-mode .App-header {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #333;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .submit-button {
+  background-color: #2196F3;
+}
+
+.light-mode .submit-button:hover {
+  background-color: #1976D2;
+}

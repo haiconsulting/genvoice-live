@@ -1,0 +1,168 @@
+.invoice-preview {
+  background-color: rgba(33, 33, 38, 0.95);
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+              0 15px 45px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.light-mode .invoice-preview {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #333;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1),
+              0 15px 45px rgba(0, 0, 0, 0.05);
+}
+
+.preview-content {
+  padding: 0;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: white;
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.preview-content h2,
+.preview-content h3,
+.preview-content h4 {
+  color: #333;
+}
+
+.preview-content p {
+  color: #666;
+}
+
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  color: #333;
+}
+
+.items-table th,
+.items-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.items-table thead th {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.items-table tfoot {
+  font-weight: bold;
+  color: #333;
+}
+
+.preview-title {
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.light-mode .preview-title {
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .invoice-preview {
+    padding: 1.5rem;
+  }
+
+  .preview-content {
+    padding: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .items-table th,
+  .items-table td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .preview-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Add horizontal scrolling for tables on mobile */
+@media (max-width: 480px) {
+  .preview-content {
+    overflow-x: auto;
+  }
+
+  .items-table {
+    min-width: 400px; /* Ensure table doesn't get too squished */
+  }
+}
+
+/* TinyMCE specific styles */
+.tox-tinymce {
+  border: none !important;
+  border-radius: 12px !important;
+}
+
+.tox .tox-toolbar {
+  background-color: #f8f9fa !important;
+  border-bottom: 1px solid #ddd !important;
+}
+
+.tox .tox-edit-area {
+  background-color: white !important;
+}
+
+/* Add to existing styles */
+
+.preview-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.preview-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  background-color: #4CAF50;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.template-button {
+  background-color: #2196F3;
+}
+
+.light-mode .preview-button {
+  background-color: #2196F3;
+}
+
+.light-mode .template-button {
+  background-color: #4CAF50;
+}
+
+.preview-button:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .preview-actions {
+    flex-direction: column;
+  }
+
+  .preview-button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,234 @@
+.invoice-form {
+  background-color: rgba(33, 33, 38, 0.95);
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+              0 15px 45px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.light-mode .invoice-form {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #333;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1),
+              0 15px 45px rgba(0, 0, 0, 0.05);
+}
+
+.template-selection,
+.invoice-details {
+  margin-bottom: 2rem;
+}
+
+.template-selection h3,
+.invoice-details h3 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.light-mode .template-selection h3,
+.light-mode .invoice-details h3 {
+  color: #333;
+}
+
+.field-description {
+  color: #a0a0a0;
+  font-size: 0.875rem;
+  margin: 0.25rem 0 0.5rem 0;
+}
+
+.light-mode .field-description {
+  color: #666;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #e0e0e0;
+}
+
+.light-mode .form-group label {
+  color: #333;
+}
+
+.invoice-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: rgba(45, 45, 50, 0.95);
+  color: #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.light-mode input,
+.light-mode select {
+  background-color: white;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+  background-color: rgba(50, 50, 55, 0.95);
+}
+
+.light-mode input:focus,
+.light-mode select:focus {
+  background-color: #f8f9fa;
+  border-color: #2196F3;
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+}
+
+input::placeholder {
+  color: #808080;
+}
+
+.file-upload {
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .invoice-form {
+    padding: 1.5rem;
+  }
+
+  .invoice-details {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  input, select {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.auth-description {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.auth-success {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.template-upload-section {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.light-mode .template-upload-section {
+  border-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.template-type-selection,
+.template-file-upload,
+.field-mapping {
+  margin-bottom: 1.5rem;
+}
+
+.field-mapping-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.field-map-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.upload-template-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.light-mode .upload-template-button {
+  background-color: #2196F3;
+}
+
+.upload-template-button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .field-mapping-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.create-template-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.light-mode .create-template-button {
+  background-color: #2196F3;
+}
+
+.create-template-button:hover {
+  background-color: #45a049;
+}
+
+.light-mode .create-template-button:hover {
+  background-color: #1976D2;
+}
+
+.template-file-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+} 

@@ -1,0 +1,51 @@
+.cost-display {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.light-mode .cost-display {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cost-display h4 {
+  margin: 0 0 1rem 0;
+  color: #e0e0e0;
+}
+
+.light-mode .cost-display h4 {
+  color: #333;
+}
+
+.cost-grid {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.cost-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.light-mode .cost-item {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.cost-item.total {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  background-color: rgba(76, 175, 80, 0.1);
+  border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.light-mode .cost-item.total {
+  background-color: rgba(33, 150, 243, 0.1);
+  border: 1px solid rgba(33, 150, 243, 0.2);
+} 
