@@ -78,7 +78,7 @@
 @media (max-width: 768px) {
   .template-generator {
     padding: 1rem;
-    margin: 1rem;
+    margin: 120px 1rem 1rem 1rem;
   }
 
   .custom-field {
