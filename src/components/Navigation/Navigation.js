@@ -21,8 +21,8 @@ const Navigation = ({ isDarkMode, toggleDarkMode }) => {
       </div>
       
       <div className="nav-links">
-        <Link to="/">Document Creator</Link>
-        <Link to="/template-generator">Template Generator</Link>
+        <Link to="/" className="nav-button">Document Creator</Link>
+        <Link to="/template-generator" className="nav-button">Template Generator</Link>
         <button 
           onClick={toggleDarkMode}
           className="theme-toggle"
