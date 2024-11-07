@@ -7,6 +7,8 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  height: auto;
+  margin-top: 100px;
 }
 
 .light-mode .template-generator {
@@ -17,7 +19,8 @@
 
 .template-base-selection,
 .custom-fields-section,
-.ai-modification-section {
+.ai-modification-section,
+.template-preview {
   margin-bottom: 2rem;
   padding: 1.5rem;
   background-color: rgba(0, 0, 0, 0.2);
@@ -27,7 +30,8 @@
 
 .light-mode .template-base-selection,
 .light-mode .custom-fields-section,
-.light-mode .ai-modification-section {
+.light-mode .ai-modification-section,
+.light-mode .template-preview {
   background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }

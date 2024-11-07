@@ -79,8 +79,8 @@
 .App-main {
   width: 90%;
   max-width: 1400px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: 0 auto;
+  padding: 100px 1rem 2rem 1rem;
 }
 
 .App-main form {
@@ -179,4 +179,9 @@
 
 .light-mode .submit-button:hover {
   background-color: #1976D2;
+}
+
+.template-generator,
+.document-creator {
+  margin-top: 100px;
 }
