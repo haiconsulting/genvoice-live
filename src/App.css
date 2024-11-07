@@ -1,3 +1,20 @@
+:root {
+  --background-secondary-dark: #1a1a1a;
+  --background-secondary-light: #ffffff;
+  --background-hover: rgba(128, 128, 128, 0.1);
+  --accent-color: #4CAF50;
+}
+
+.dark-mode {
+  --background-secondary: var(--background-secondary-dark);
+  --text-primary: #ffffff;
+}
+
+.light-mode {
+  --background-secondary: var(--background-secondary-light);
+  --text-primary: #333333;
+}
+
 .App {
   text-align: center;
   min-height: 100vh;

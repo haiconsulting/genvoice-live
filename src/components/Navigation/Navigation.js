@@ -1,44 +1,36 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './Navigation.css';
 
 const Navigation = ({ isDarkMode, toggleDarkMode }) => {
-  const location = useLocation();
-
   return (
-    <motion.header 
-      className="App-header"
+    <motion.nav 
+      className="navigation"
       initial={{ y: -50 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
+      transition={{ duration: 0.5 }}
     >
-      <div className="header-content">
+      <div className="nav-brand">
+        <img 
+          src={`${process.env.PUBLIC_URL}/favicon.ico`} 
+          alt="GenVoice Logo" 
+          className="nav-logo"
+        />
         <h1>GenVoice</h1>
-        <nav className="main-nav">
-          <Link 
-            to="/" 
-            className={location.pathname === '/' ? 'active' : ''}
-          >
-            Document Creator
-          </Link>
-          <Link 
-            to="/template-generator" 
-            className={location.pathname === '/template-generator' ? 'active' : ''}
-          >
-            Template Generator
-          </Link>
-        </nav>
-        <motion.button
-          className="theme-toggle"
+      </div>
+      
+      <div className="nav-links">
+        <Link to="/">Document Creator</Link>
+        <Link to="/template-generator">Template Generator</Link>
+        <button 
           onClick={toggleDarkMode}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
+          className="theme-toggle"
         >
           {isDarkMode ? '☀️' : '🌙'}
-        </motion.button>
+        </button>
       </div>
-    </motion.header>
+    </motion.nav>
   );
 };
 
