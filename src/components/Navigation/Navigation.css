@@ -3,8 +3,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: var(--background-secondary);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #1E2A3A 0%, #5D3FA3 50%, #1E2A3A 100%);
+  box-shadow: 0 4px 15px rgba(93, 63, 163, 0.4);
   width: 100%;
   position: fixed;
   top: 0;
@@ -36,11 +36,12 @@
 .nav-brand h1 {
   margin: 0;
   font-size: 1.5rem;
-  color: var(--text-primary);
+  color: var(--pure-white);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .nav-links {
@@ -51,19 +52,20 @@
 }
 
 .nav-button {
-  color: var(--text-primary);
+  color: var(--pure-white);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   font-size: 1.1rem;
   display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .nav-button:hover {
-  color: var(--accent-color);
-  background-color: var(--background-hover);
+  color: var(--teal-cyan);
+  background-color: rgba(59, 201, 181, 0.1);
 }
 
 .theme-toggle {
@@ -73,13 +75,14 @@
   font-size: 1.5rem;
   padding: 0.5rem;
   border-radius: 50%;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   position: absolute;
   right: 2rem;
 }
 
 .theme-toggle:hover {
-  background-color: var(--background-hover);
+  background-color: rgba(59, 201, 181, 0.2);
+  transform: scale(1.1);
 }
 
 .mobile-menu {
@@ -124,7 +127,7 @@
   .hamburger-menu span {
     width: 100%;
     height: 2px;
-    background-color: var(--text-primary);
+    background-color: var(--pure-white);
     transition: all 0.3s ease;
   }
 
@@ -134,12 +137,12 @@
     left: 0;
     right: 0;
     flex-direction: column;
-    background-color: var(--background-secondary);
+    background: linear-gradient(135deg, #1E2A3A 0%, #5D3FA3 100%);
     padding: 1rem;
     gap: 1rem;
     margin: 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-top: 1px solid var(--background-hover);
+    box-shadow: 0 4px 15px rgba(93, 63, 163, 0.4);
+    border-top: 1px solid rgba(59, 201, 181, 0.2);
   }
 
   .nav-links.mobile-active {
@@ -160,9 +163,26 @@
 }
 
 :root[data-theme="dark"] .navigation {
-  background-color: var(--background-secondary-dark, #212126f2);
+  background: linear-gradient(135deg, #1E2A3A 0%, #5D3FA3 50%, #1E2A3A 100%);
 }
 
 :root[data-theme="light"] .navigation {
-  background-color: var(--background-secondary-light, #ffffff);
+  background: linear-gradient(to top right, #5D3FA3, #7A4EB8, #C7A8E4);
+}
+
+.light-mode .navigation {
+  background: linear-gradient(to top right, #5D3FA3, #7A4EB8, #C7A8E4);
+}
+
+.light-mode .nav-brand h1 {
+  color: var(--pure-white);
+}
+
+.light-mode .nav-button {
+  color: var(--pure-white);
+}
+
+.light-mode .nav-button:hover {
+  color: var(--pure-white);
+  background-color: rgba(255, 255, 255, 0.2);
 } 

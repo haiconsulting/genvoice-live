@@ -3,7 +3,6 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Navigation from './components/Navigation/Navigation';
 import DocumentCreator from './components/DocumentCreator/DocumentCreator';
-import TemplateGenerator from './components/TemplateGenerator/TemplateGenerator';
 import './App.css';
 
 function App() {
@@ -31,7 +30,6 @@ function App() {
         />
         <Routes>
           <Route path="/" element={<DocumentCreator />} />
-          <Route path="/template-generator" element={<TemplateGenerator />} />
         </Routes>
       </motion.div>
     </Router>

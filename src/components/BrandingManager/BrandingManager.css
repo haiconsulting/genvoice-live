@@ -1,16 +1,17 @@
 .branding-manager {
-  background-color: rgba(33, 33, 38, 0.95);
+  background-color: rgba(30, 42, 58, 0.95);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(93, 63, 163, 0.3);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(59, 201, 181, 0.2);
   margin-top: 2rem;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .light-mode .branding-manager {
   background-color: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(93, 63, 163, 0.2);
 }
 
 .upload-section {
@@ -28,21 +29,22 @@
 
 .upload-group label {
   font-weight: 600;
-  color: #e0e0e0;
+  color: var(--pure-white);
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .light-mode .upload-group label {
-  color: #333;
+  color: var(--deep-slate-navy);
 }
 
 .field-description {
-  color: #a0a0a0;
+  color: var(--light-lavender);
   font-size: 0.875rem;
   margin: 0;
 }
 
 .light-mode .field-description {
-  color: #666;
+  color: var(--mystic-purple);
 }
 
 .preview-image {

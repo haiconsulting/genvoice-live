@@ -1,21 +1,22 @@
 .invoice-form {
-  background-color: rgba(33, 33, 38, 0.95);
+  background-color: rgba(30, 42, 58, 0.95);
   padding: 3rem;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+  box-shadow: 0 10px 30px rgba(93, 63, 163, 0.3),
               0 15px 45px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #e0e0e0;
+  border: 1px solid rgba(59, 201, 181, 0.2);
+  color: var(--pure-white);
   transform-style: preserve-3d;
   perspective: 1000px;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .light-mode .invoice-form {
   background-color: rgba(255, 255, 255, 0.95);
-  color: #333;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1),
+  color: var(--deep-slate-navy);
+  border: 1px solid rgba(93, 63, 163, 0.2);
+  box-shadow: 0 10px 30px rgba(93, 63, 163, 0.2),
               0 15px 45px rgba(0, 0, 0, 0.05);
 }
 
@@ -26,23 +27,24 @@
 
 .template-selection h3,
 .invoice-details h3 {
-  color: #fff;
+  color: var(--pure-white);
   margin-bottom: 0.5rem;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .light-mode .template-selection h3,
 .light-mode .invoice-details h3 {
-  color: #333;
+  color: var(--deep-slate-navy);
 }
 
 .field-description {
-  color: #a0a0a0;
+  color: var(--light-lavender);
   font-size: 0.875rem;
   margin: 0.25rem 0 0.5rem 0;
 }
 
 .light-mode .field-description {
-  color: #666;
+  color: var(--mystic-purple);
 }
 
 .form-group {
@@ -53,11 +55,12 @@
   display: block;
   font-weight: 600;
   margin-bottom: 0.25rem;
-  color: #e0e0e0;
+  color: var(--pure-white);
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .light-mode .form-group label {
-  color: #333;
+  color: var(--deep-slate-navy);
 }
 
 .invoice-details {
@@ -69,33 +72,34 @@
 input, select {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(59, 201, 181, 0.2);
   border-radius: 4px;
   font-size: 1rem;
-  background-color: rgba(45, 45, 50, 0.95);
-  color: #e0e0e0;
+  background-color: rgba(30, 42, 58, 0.6);
+  color: var(--pure-white);
   transition: all 0.3s ease;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .light-mode input,
 .light-mode select {
   background-color: white;
-  border: 1px solid #ddd;
-  color: #333;
+  border: 1px solid rgba(93, 63, 163, 0.3);
+  color: var(--deep-slate-navy);
 }
 
 input:focus, select:focus {
   outline: none;
-  border-color: #4CAF50;
-  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
-  background-color: rgba(50, 50, 55, 0.95);
+  border-color: var(--teal-cyan);
+  box-shadow: 0 0 0 2px rgba(59, 201, 181, 0.3);
+  background-color: rgba(30, 42, 58, 0.8);
 }
 
 .light-mode input:focus,
 .light-mode select:focus {
   background-color: #f8f9fa;
-  border-color: #2196F3;
-  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+  border-color: var(--royal-purple);
+  box-shadow: 0 0 0 2px rgba(93, 63, 163, 0.2);
 }
 
 input::placeholder {
@@ -140,21 +144,21 @@ input::placeholder {
 }
 
 .auth-success {
-  color: #4CAF50;
+  color: var(--teal-cyan);
   font-weight: 600;
 }
 
 .template-upload-section {
   margin-top: 1.5rem;
   padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(59, 201, 181, 0.2);
   border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(93, 63, 163, 0.1);
 }
 
 .light-mode .template-upload-section {
-  border-color: rgba(0, 0, 0, 0.1);
-  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(93, 63, 163, 0.2);
+  background-color: rgba(199, 168, 228, 0.1);
 }
 
 .template-type-selection,
@@ -178,22 +182,27 @@ input::placeholder {
 
 .upload-template-button {
   width: 100%;
-  padding: 0.75rem;
-  background-color: #4CAF50;
-  color: white;
+  padding: 0.875rem 2.5rem;
+  background: linear-gradient(135deg, #5D3FA3, #7A4EB8, #3BC9B5);
+  color: var(--pure-white);
   border: none;
-  border-radius: 4px;
+  border-radius: 30px;
   cursor: pointer;
   margin-top: 1rem;
   transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(93, 63, 163, 0.4);
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .light-mode .upload-template-button {
-  background-color: #2196F3;
+  background: linear-gradient(135deg, #5D3FA3, #7A4EB8, #3BC9B5);
 }
 
 .upload-template-button:hover {
-  opacity: 0.9;
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(93, 63, 163, 0.6);
 }
 
 @media (max-width: 768px) {
@@ -204,27 +213,32 @@ input::placeholder {
 
 .create-template-button {
   width: 100%;
-  padding: 0.75rem;
-  background-color: #4CAF50;
-  color: white;
+  padding: 0.875rem 2.5rem;
+  background: linear-gradient(135deg, #5D3FA3, #7A4EB8, #3BC9B5);
+  color: var(--pure-white);
   border: none;
-  border-radius: 4px;
+  border-radius: 30px;
   cursor: pointer;
   margin-top: 1rem;
   transition: all 0.3s ease;
   font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(93, 63, 163, 0.4);
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .light-mode .create-template-button {
-  background-color: #2196F3;
+  background: linear-gradient(135deg, #5D3FA3, #7A4EB8, #3BC9B5);
 }
 
 .create-template-button:hover {
-  background-color: #45a049;
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(93, 63, 163, 0.6);
 }
 
 .light-mode .create-template-button:hover {
-  background-color: #1976D2;
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(93, 63, 163, 0.5);
 }
 
 .template-file-upload {

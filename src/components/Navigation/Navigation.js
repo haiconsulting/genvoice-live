@@ -30,10 +30,10 @@ const Navigation = ({ isDarkMode, toggleDarkMode }) => {
       <div className="nav-brand">
         <img 
           src={`${process.env.PUBLIC_URL}/favicon.ico`} 
-          alt="GenVoice Logo" 
+          alt="HAI Invoice Generator" 
           className="nav-logo"
         />
-        <h1>GenVoice</h1>
+        <h1>HAI Invoice Generator</h1>
       </div>
       
       <div className="mobile-menu">
@@ -57,12 +57,6 @@ const Navigation = ({ isDarkMode, toggleDarkMode }) => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
           >
-            <Link to="/" className="nav-button" onClick={() => setIsMenuOpen(false)}>
-              Document Creator
-            </Link>
-            <Link to="/template-generator" className="nav-button" onClick={() => setIsMenuOpen(false)}>
-              Template Generator
-            </Link>
             <button 
               onClick={() => {
                 toggleDarkMode();

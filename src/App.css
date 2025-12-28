@@ -1,24 +1,33 @@
 :root {
-  --background-secondary-dark: #1a1a1a;
-  --background-secondary-light: #ffffff;
-  --background-hover: rgba(128, 128, 128, 0.1);
-  --accent-color: #4CAF50;
+  /* HAI Brand Colors */
+  --deep-slate-navy: #1E2A3A;
+  --royal-purple: #5D3FA3;
+  --mystic-purple: #7A4EB8;
+  --teal-cyan: #3BC9B5;
+  --pure-white: #FFFFFF;
+  --light-lavender: #C7A8E4;
+  
+  --background-secondary-dark: #1E2A3A;
+  --background-secondary-light: #FFFFFF;
+  --background-hover: rgba(59, 201, 181, 0.1);
+  --accent-color: #3BC9B5;
 }
 
 .dark-mode {
   --background-secondary: var(--background-secondary-dark);
-  --text-primary: #ffffff;
+  --text-primary: var(--pure-white);
 }
 
 .light-mode {
   --background-secondary: var(--background-secondary-light);
-  --text-primary: #333333;
+  --text-primary: var(--deep-slate-navy);
 }
 
 .App {
   text-align: center;
   min-height: 100vh;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background: linear-gradient(135deg, #1E2A3A 0%, #5D3FA3 50%, #1E2A3A 100%);
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233BC9B5' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   transition: all 0.3s ease;
   padding: 1rem;
   display: flex;
@@ -27,17 +36,17 @@
 }
 
 .App.light-mode {
-  background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
-  color: #333;
+  background: linear-gradient(135deg, #FFFFFF 0%, #C7A8E4 100%);
+  color: var(--deep-slate-navy);
 }
 
 .App-header {
-  background-color: rgba(24, 24, 28, 0.95);
+  background: linear-gradient(135deg, #1E2A3A 0%, #5D3FA3 50%, #1E2A3A 100%);
   padding: 20px;
-  color: #e0e0e0;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  color: var(--pure-white);
+  box-shadow: 0 4px 15px rgba(93, 63, 163, 0.4);
   backdrop-filter: blur(5px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(59, 201, 181, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,9 +55,9 @@
 }
 
 .light-mode .App-header {
-  background-color: rgba(255, 255, 255, 0.95);
-  color: #333;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #1E2A3A 0%, #5D3FA3 50%, #1E2A3A 100%);
+  color: var(--pure-white);
+  border-bottom: 1px solid rgba(59, 201, 181, 0.2);
 }
 
 .theme-toggle {
@@ -139,46 +148,45 @@
   }
 }
 
-/* Submit Button Styles */
+/* Submit Button Styles - HAI Brand */
 .submit-button {
   width: 100%;
   max-width: 400px;
   margin: 2rem auto 0;
-  padding: 1rem;
-  background-color: #4CAF50;
-  color: white;
+  padding: 0.875rem 2.5rem;
+  background: linear-gradient(135deg, #5D3FA3, #7A4EB8, #3BC9B5);
+  color: var(--pure-white);
   border: none;
-  border-radius: 4px;
+  border-radius: 30px;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(93, 63, 163, 0.4);
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .submit-button:hover {
-  background-color: #45a049;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(93, 63, 163, 0.6),
+              0 0 30px rgba(59, 201, 181, 0.3);
 }
 
 .submit-button:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02) translateY(0);
+  box-shadow: 0 4px 15px rgba(93, 63, 163, 0.4);
 }
 
-/* Theme-specific styles */
-.light-mode .App-header {
-  background-color: rgba(255, 255, 255, 0.95);
-  color: #333;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
+/* Theme-specific button styles */
 .light-mode .submit-button {
-  background-color: #2196F3;
+  background: linear-gradient(135deg, #5D3FA3, #7A4EB8, #3BC9B5);
+  box-shadow: 0 4px 15px rgba(93, 63, 163, 0.3);
 }
 
 .light-mode .submit-button:hover {
-  background-color: #1976D2;
+  box-shadow: 0 6px 20px rgba(93, 63, 163, 0.5),
+              0 0 30px rgba(59, 201, 181, 0.2);
 }
 
 .template-generator,
